@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,15 +13,13 @@ namespace HashCode1
     {
         static void Main(string[] args)
         {
-            int[] arr = new int[3] { 1, 2, 3 };
-            var list = (IList)arr;
-            list.Add(4);
-            
             Console.Beep();
-            Console.WriteLine(arr[3]);
-            Console.ReadKey();
-        }
 
+            var po = new PizzaOrder();
+            // Keep the console window open in debug mode.
+            Console.WriteLine("Press any key to exit.");
+            System.Console.ReadKey();
+        }
 
     }
 }
