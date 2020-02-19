@@ -20,7 +20,7 @@ namespace HashCode1
 
         void GetInput()
         {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"data\d_quite_big.in");
+            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"data\e_also_big.in");
 
             // Read each line of the file into a string array. Each element
             // of the array is one line of the file.
@@ -56,10 +56,10 @@ namespace HashCode1
                 var bigScore = pizzas[i];
                 for (int j = 1; j < pizzaTypes - 1; j++)
                 {
-                    for (int k = 0; k < pizzas.Count; k++)
+                    for (int k = i; k < pizzas.Count; k++)
                     {
                         var currScore = pizzas[k] + bigScore;
-                        if (currScore > bigScore && currScore < pizzaMax)
+                        if (currScore > bigScore && currScore <= pizzaMax)
                         {
                             bigScore = currScore;
                         }
@@ -68,9 +68,11 @@ namespace HashCode1
                 if (bigScore > bestScore)
                 {
                     bestScore = bigScore;
+                    Console.WriteLine($"Best score: {bestScore}");
                 }
             }
-            Console.Write($"Best score: {bestScore}");
+            Console.WriteLine("FINISHED");
+            Console.Beep(37, 200);
         }
 
 
