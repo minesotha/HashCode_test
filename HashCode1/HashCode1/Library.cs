@@ -13,6 +13,7 @@ namespace HashCode1
         public Book[] books;
         public Library(int _libraryId, int _numberOfBooks, int _signUpDays, int _booksPerDay, int[] _booksIds, int[] _boookScores)
         {
+            libraryId = _libraryId;
             numberOfBooks = _numberOfBooks;
             signUpDays = _signUpDays;
             booksPerDay = _booksPerDay;

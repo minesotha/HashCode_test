@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace HashCode1
@@ -55,6 +56,7 @@ namespace HashCode1
                 id++;
             }
 
+
             showData();
             //GetBest();
             //MakeOutput();
@@ -65,6 +67,15 @@ namespace HashCode1
             Console.WriteLine($"\n\nLiczba książek: {lib.numberOfBooks} \n liczba dni na rejestracje: {lib.signUpDays} \n  Max książek dziennie: {lib.booksPerDay} ");
         }
 
+        void printStats()
+        {
+            var dict = StatsCreator.GetStats(numberOfDays, libraries.ToList());
+            foreach (var item in dict)
+            {
+                Console.WriteLine($" klucz: {item.Key} ,wartość: {string.Join(" ", item.Value.Select(x=>x.ToString()))}");
+            }
+        }
+
         void showData()
         {
             Console.WriteLine($"Liczba książek: {numberOfBooks} \n liczba bibliotek : {numberOfLibraries} \n Dni na skanowanie: {numberOfDays} ");
@@ -73,6 +84,9 @@ namespace HashCode1
             {
                 printLibrary(lb);
             }
+
+            printStats();
+
 
         }
 
