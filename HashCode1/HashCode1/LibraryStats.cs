@@ -10,5 +10,10 @@ namespace HashCode1
     {
         public Library Library { get; set; }
         public int Score { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}: {1}", Library.libraryId, Score);
+        }
     }
 }
