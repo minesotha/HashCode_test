@@ -13,13 +13,13 @@
             numberOfBooks = _numberOfBooks;
             signUpDays = _signUpDays;
             booksPerDay = _booksPerDay;
-            Book[] books = new Book[numberOfBooks];
+            books = new Book[numberOfBooks];
 
             //add scores to books
 
-            for (int i = 0; i < numberOfBooks-1; i++)
+            for (int i = 0; i < numberOfBooks; i++)
             {
-                books[i] = new Book(_booksIds[i], _boookScores[i]);
+                books[i] = new Book(_booksIds[i], _boookScores[_booksIds[i]]);
             }
         }
 

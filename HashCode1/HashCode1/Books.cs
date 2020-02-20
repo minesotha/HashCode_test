@@ -47,7 +47,7 @@ namespace HashCode1
             string[] dataline;
             int[] bookids;
             int id = 0;
-            for (int i = 0; i < numberOfLibraries * 2; i += 2)
+            for (int i = 2; i < (numberOfLibraries*2) + 2; i += 2)
             {
                 dataline = lines[i].ToString().Split(null);
                 bookids = Array.ConvertAll(lines[i + 1].ToString().Split(null), s => int.Parse(s));
@@ -58,6 +58,11 @@ namespace HashCode1
             showData();
             //GetBest();
             //MakeOutput();
+        }
+
+        void printLibrary()
+        {
+            Console.WriteLine($"Liczba książek: {numberOfBooks} \n liczba bibliotek : {numberOfLibraries} \n Dni na skanowanie: {numberOfDays} ");
         }
 
         void showData()
