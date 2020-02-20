@@ -41,7 +41,7 @@ namespace HashCode1
                 {
                     orderedBooks.Remove(boo);
                 }
-                sum += b.Select(x => x.score).Sum() + (isSignedIn ? 0 : signUpDays);
+                sum += b.Select(x => x.score).Sum();
             }
 
             return sum;
