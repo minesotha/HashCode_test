@@ -31,7 +31,7 @@ namespace HashCode1
         {
             List<Book> booksToParse = new List<Book>();
 
-            var orderedBooks = books.OrderByDescending(l => l.score).ToList();
+            var orderedBooks = books.OrderByDescending(l => l.score).Where(x => !x.isScanned).ToList();
             for (int i = 0; i < _numberOfDays; ++i)
             {
                 if (!isSignedIn && signUpDays > i) { continue; }
