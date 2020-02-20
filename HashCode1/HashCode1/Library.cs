@@ -29,10 +29,22 @@ namespace HashCode1
 
         public int getMaxScoresForDays(int _numberOfDays, bool _useSignedStatus)
         {
-            var orderedBooks = books.OrderBy(l => l.score).ToList();
-            var b = GetBooksForDay(orderedBooks);
+            var sum = 0;
 
-            return b.Select(x => x.score).Sum() + (isSignedIn ? 0 : signUpDays);
+            var orderedBooks = books.OrderByDescending(l => l.score).ToList();
+            for (int i = 0; i < _numberOfDays; ++i)
+            {
+                if (!isSignedIn && signUpDays > i) { continue; }
+
+                var b = GetBooksForDay(orderedBooks);
+                foreach (var boo in b)
+                {
+                    orderedBooks.Remove(boo);
+                }
+                sum += b.Select(x => x.score).Sum() + (isSignedIn ? 0 : signUpDays);
+            }
+
+            return sum;
         }
 
         private List<Book> GetBooksForDay(List<Book> books)
@@ -41,7 +53,10 @@ namespace HashCode1
 
             for (int i = 0; i < booksPerDay; ++i)
             {
-                r.Add(books[i]);
+                if (books.Count > booksPerDay)
+                {
+                    r.Add(books[i]);
+                }
             }
 
             return r;
