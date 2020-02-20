@@ -15,7 +15,7 @@ namespace HashCode1
         {
             Console.Beep();
 
-            var po = new PizzaOrder();
+            var b = new Books();
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             System.Console.ReadKey();

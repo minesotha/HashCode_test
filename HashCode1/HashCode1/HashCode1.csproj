@@ -44,27 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library.cs" />
+    <Compile Include="Books.cs" />
     <Compile Include="PizzaOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="data\a_example.in">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\a_example.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\b_small.in">
+    </Content>
+    <Content Include="data\b_read_on.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\c_medium.in">
+    </Content>
+    <Content Include="data\c_incunabula.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\d_quite_big.in">
+    </Content>
+    <Content Include="data\d_tough_choices.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="data\e_also_big.in">
+    </Content>
+    <Content Include="data\e_so_many_books.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
