@@ -19,8 +19,8 @@ namespace HashCode1
 
                 foreach (var l in libs)
                 {
-                    var max = l.getMaxScoresForDays(days, true);
-                    stats.Add(new LibraryStats() { Library = l, Score = max });
+                    var books = l.getMaxScoresForDays(days, true);
+                    stats.Add(new LibraryStats() { Library = l, Score = books.Select(x => x.score).Sum(), Books = books });
                 }
 
                 result.Add(days, stats);

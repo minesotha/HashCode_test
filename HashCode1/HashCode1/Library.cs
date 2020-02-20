@@ -27,9 +27,9 @@ namespace HashCode1
             }
         }
 
-        public int getMaxScoresForDays(int _numberOfDays, bool _useSignedStatus)
+        public List<Book> getMaxScoresForDays(int _numberOfDays, bool _useSignedStatus)
         {
-            var sum = 0;
+            List<Book> booksToParse = new List<Book>();
 
             var orderedBooks = books.OrderByDescending(l => l.score).ToList();
             for (int i = 0; i < _numberOfDays; ++i)
@@ -41,10 +41,10 @@ namespace HashCode1
                 {
                     orderedBooks.Remove(boo);
                 }
-                sum += b.Select(x => x.score).Sum();
+                booksToParse.AddRange(b);
             }
 
-            return sum;
+            return booksToParse;
         }
 
         private List<Book> GetBooksForDay(List<Book> books)
