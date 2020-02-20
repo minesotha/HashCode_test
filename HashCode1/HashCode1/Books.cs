@@ -60,14 +60,19 @@ namespace HashCode1
             //MakeOutput();
         }
 
-        void printLibrary()
+        void printLibrary(Library lib)
         {
-            Console.WriteLine($"Liczba książek: {numberOfBooks} \n liczba bibliotek : {numberOfLibraries} \n Dni na skanowanie: {numberOfDays} ");
+            Console.WriteLine($"\n\nLiczba książek: {lib.numberOfBooks} \n liczba dni na rejestracje: {lib.signUpDays} \n  Max książek dziennie: {lib.booksPerDay} ");
         }
 
         void showData()
         {
             Console.WriteLine($"Liczba książek: {numberOfBooks} \n liczba bibliotek : {numberOfLibraries} \n Dni na skanowanie: {numberOfDays} ");
+
+            foreach (var lb in libraries)
+            {
+                printLibrary(lb);
+            }
 
         }
 
