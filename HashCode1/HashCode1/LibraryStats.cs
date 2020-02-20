@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashCode1
 {
-    class LibraryStats
+    public class LibraryStats
     {
         public Library Library { get; set; }
         public int Score { get; set; }
