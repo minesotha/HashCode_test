@@ -1,4 +1,7 @@
-﻿namespace HashCode1
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace HashCode1
 {
     public class Library
     {
@@ -25,7 +28,22 @@
 
         public int getMaxScoresForDays(int _numberOfDays, bool _useSignedStatus)
         {
-            return 0;
+            var orderedBooks = books.OrderBy(l => l.score).ToList();
+            var b = GetBooksForDay(orderedBooks);
+
+            return b.Select(x => x.score).Sum();
+        }
+
+        private List<Book> GetBooksForDay(List<Book> books)
+        {
+            var r = new List<Book>();
+
+            for (int i = 0; i < booksPerDay; ++i)
+            {
+                r.Add(books[i]);
+            }
+
+            return r;
         }
     }
 
