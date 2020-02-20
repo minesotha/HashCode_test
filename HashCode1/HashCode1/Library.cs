@@ -53,7 +53,7 @@ namespace HashCode1
 
             for (int i = 0; i < booksPerDay; ++i)
             {
-                if (books.Count > booksPerDay)
+                if (books.Count > i)
                 {
                     r.Add(books[i]);
                 }
