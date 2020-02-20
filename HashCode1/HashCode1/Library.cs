@@ -32,7 +32,7 @@ namespace HashCode1
             var orderedBooks = books.OrderBy(l => l.score).ToList();
             var b = GetBooksForDay(orderedBooks);
 
-            return b.Select(x => x.score).Sum();
+            return b.Select(x => x.score).Sum() + (isSignedIn ? 0 : signUpDays);
         }
 
         private List<Book> GetBooksForDay(List<Book> books)
